@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Kalpit Raj 🎉</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+overflow:hidden;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ff4e50,#fc913a,#f9d423);
+}
+
+.card{
+position:relative;
+z-index:10;
+background:rgba(255,255,255,.18);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+text-align:center;
+color:white;
+box-shadow:0 0 20px rgba(0,0,0,.4);
+}
+
+h1{
+font-size:48px;
+animation:zoom 2s infinite alternate;
+}
+
+h2{
+font-size:34px;
+margin-top:10px;
+}
+
+p{
+margin-top:15px;
+font-size:22px;
+}
+
+button{
+margin-top:20px;
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:10px;
+background:white;
+color:#ff4081;
+cursor:pointer;
+font-weight:bold;
+}
+
+@keyframes zoom{
+from{transform:scale(1);}
+to{transform:scale(1.08);}
+}
+
+.balloon{
+position:absolute;
+bottom:-150px;
+width:60px;
+height:80px;
+border-radius:50%;
+animation:float 10s linear infinite;
+}
+
+.balloon:after{
+content:'';
+position:absolute;
+width:2px;
+height:70px;
+background:#fff;
+left:29px;
+top:80px;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-120vh);}
+}
+.confetti{
+position:absolute;
+width:10px;
+height:10px;
+animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-100px) rotate(0deg);
+}
+100%{
+transform:translateY(110vh) rotate(720deg);
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>🎉 Happy Birthday 🎂</h1>
+<h2>Kalpit Raj ❤️</h2>
+
+<p>
+May your birthday bring lots of happiness,<br>
+success, good health and unforgettable memories! 🎁✨
+</p>
+
+<button onclick="document.getElementById('song').play()">
+▶ Play Birthday Song
+</button>
+
+<audio id="song" src="birthday.mp3"></audio>
+
+</div>
+
+<script>
+
+const colors=[
+"red","blue","green",
+"yellow","pink","purple","orange"
+];
+
+for(let i=0;i<20;i++){
+let b=document.createElement("div");
+b.className="balloon";
+b.style.left=Math.random()*100+"vw";
+b.style.background=colors[Math.floor(Math.random()*colors.length)];
+b.style.animationDuration=(6+Math.random()*6)+"s";
+document.body.appendChild(b);
+}
+const c=[
+"#ff0","#0ff","#f0f",
+"#0f0","#fff","#ff5722"
+];
+
+for(let i=0;i<120;i++){
+let x=document.createElement("div");
+x.className="confetti";
+x.style.left=Math.random()*100+"vw";
+x.style.background=c[Math.floor(Math.random()*c.length)];
+x.style.animationDuration=(3+Math.random()*4)+"s";
+x.style.animationDelay=Math.random()*3+"s";
+document.body.appendChild(x);
+}
+
+</script>
+
+</body>
+</html>
